@@ -51,4 +51,8 @@ php artisan key:generate
 php artisan migrate
 
 # Rodar comando para importar Pokémons
-php artisan pokemon:get
+php artisan pokemon:get-all
+# Atualizar base_experience
+php artisan pokemon:update 25 200
+# Remove todos os Pokémons do banco
+php artisan pokemon:remove-all 
