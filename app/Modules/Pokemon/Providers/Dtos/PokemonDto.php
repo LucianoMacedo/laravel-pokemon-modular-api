@@ -4,14 +4,14 @@ namespace App\Modules\Pokemon\Providers\Dtos;
 
 class PokemonDto
 {
+    public int $number;
     public string $name;
     public int $base_experience;
-    public int $number;
 
-    public function __construct(string $name, int $base_experience, int $number)
+    public function __construct(array $data)
     {
-        $this->name = $name;
-        $this->base_experience = $base_experience;
-        $this->number = $number;
+        $this->number = $data['number'] ?? 0;
+        $this->name = $data['name'] ?? '';
+        $this->base_experience = $data['base_experience'] ?? 0;
     }
 }

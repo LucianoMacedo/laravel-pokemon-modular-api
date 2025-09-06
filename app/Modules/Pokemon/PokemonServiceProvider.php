@@ -20,8 +20,6 @@ class PokemonServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                GetPokemonCommand::class,
-                GetMultiplePokemonCommand::class,
                 GetPokemonAllCommand::class,
                 UpdatePokemonCommand::class,
                 RemoveAllPokemonCommand::class,

@@ -13,10 +13,10 @@ class GetPokemonAllCommand extends Command
     protected $description = 'Busca todos os Pokémons da API e salva no banco de dados';
     public function handle(PokemonService $service)
     {
-        for ($i = 1; $i <= 151; $i++) { // Exemplo: buscar os primeiros 151 Pokémons
+        for ($i = 1; $i <= 151; $i++) {
             try {
-                $pokemon = $service->getPokemon($i); // Reutiliza o serviço existente
-                $this->info("Pokémon {$pokemon->name} (#{$i}) salvo com sucesso!"); // Mensagem de sucesso
+                $pokemon = $service->getAllPokemon($i);
+                $this->info("Pokémon {$pokemon->name} (#{$i}) salvo com sucesso!");
             } catch (Exception $e) {
                 Log::error("Erro ao buscar o Pokémon com ID {$i}: " . $e->getMessage());
                 $this->error("Erro ao buscar o Pokémon com ID {$i}. Verifique os logs.");
